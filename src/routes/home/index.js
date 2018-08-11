@@ -161,7 +161,7 @@ export default class HomeContainer extends Component{
             fieldTick
                 .classed("field-tick--disabled", function (d, i) {
                     return i >= d.field.activeLength;
-                })
+                }) 
                 .classed("field-tick--active", function (d, i) {
                     return i === d.field.activeIndex;
                 });
