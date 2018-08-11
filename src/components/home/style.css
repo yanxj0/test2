@@ -1,0 +1,39 @@
+.home-contain{
+  background: #222;
+  text-align: center;
+}
+
+.field-track,
+.field-arm {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.field-tick {
+  transition: opacity 750ms linear;
+}
+
+.field-tick:not(.field-tick--active) circle,
+.field-tick:not(.field-tick--active):first-of-type text {
+  fill: #222 !important;
+}
+
+.field-tick:not(.field-tick--active):first-of-type circle {
+  fill: #000 !important;
+}
+
+.field-tick--disabled {
+  opacity: 0;
+}
+
+.field-tick circle,
+.field-tick text {
+  transition: fill 250ms linear;
+  transition-delay: 400ms;
+}
+
+.field-tick text {
+  font: 700 14px "Helvetica Neue";
+  text-anchor: middle;
+}

@@ -1,0 +1,34 @@
+@import '~antd/dist/antd.css';
+@import './style/Layout.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.ant-layout-sider.fixed {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  z-index: 10;
+  min-height: 100%;
+  height: 100%;
+}
+
+.content-max{
+  padding: 0 10px 10px 210px;
+  transition: padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.content-normal{
+  padding: 0 10px 10px 74px;
+}
