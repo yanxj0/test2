@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
 
-
 import Home from '../../components/home';
 
 export default class HomeContainer extends Component{
     componentDidMount() {
-        const svg = d3.select("#home-svg"),
-            width = +svg.attr("width"),
-            height = +svg.attr("height"),
-            radius = Math.min(width, height) / 1.9,
-            armRadius = radius / 22,
-            dotRadius = armRadius - 6;
+        const containerHeight = window.innerHeight - 220,
+              containerWidth = window.innerWidth - 234;
 
+        const svg = d3.select("#home-svg"),
+              width = 960,
+              height = 960,
+              scale = d3.min([containerHeight/height, containerWidth/width]),
+              radius = Math.min(width, height) / 1.9,
+              armRadius = radius / 22,
+              dotRadius = armRadius - 6;
+              
         const duration = 750;
             // now = new Date(Date.now() + 2 * duration);
 
@@ -76,7 +79,12 @@ export default class HomeContainer extends Component{
             })
             .cornerRadius(armRadius);
 
-        let field = svg.append("g")
+        let field = svg
+            .attr("height", height*scale)
+            .attr("width", width*scale)
+            .append("g")
+            .attr("transform", "translate(0)scale(" + scale +")")
+            .append('g')
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
             .selectAll(".field")
             .data(fields)
