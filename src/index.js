@@ -19,7 +19,7 @@ const app = dva({
 app.use(createLoading())
 
 // 2. Model
-
+app.model(require('./models/D3').default)
 
 // 3. Router
 app.router(router)

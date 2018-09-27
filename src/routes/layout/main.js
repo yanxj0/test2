@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import RootSider from '../../components/layout/RootSider';
 import RootBreadcrumb from '../../components/layout/RootBreadcrumb';
 
-// import menus from '../../config/menuList';
+import menus from '../../config/menuList';
 
 export const RootSiderRoute = () =>
     <Route path="*" component={RootSider}/>
@@ -12,15 +12,15 @@ export const RootSiderRoute = () =>
 export const RootBreadcrumbRoute = () =>
     <Route path="*" component={RootBreadcrumb} />
 
-export const ContentRoute = () => {
-    // const list = menus.reduce((prev, item)=> prev.concat([...item.children]),[]);
+export const ContentRoute = (props) => {
+    const list = menus.reduce((prev, item)=> prev.concat([...item.children]),[]);
     return (
     <Switch>
         <Route exact path='/' component={getComponent(()=>import('../home'))}/>
         {
-            // list.map((item)=>(
-            //     <Route path={itme.path} component={}/>
-            // ))
+            list.map((item)=>(
+                <Route key={item.path} path={`${props.match.url}${item.path}`} component={getComponent(item.loader)}/>
+            ))
         }
     </Switch>)
 }

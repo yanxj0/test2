@@ -19,7 +19,7 @@ class Home extends Component {
           <Layout className="content-max">
             <RootBreadcrumbRoute/>
             <Content style={{ background: '#fff', padding: 12, margin: 0, minHeight: 280 }}>
-              <ContentRoute />
+              <ContentRoute {...this.props}/>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
               <a href="https://ant.design">Ant Design</a>

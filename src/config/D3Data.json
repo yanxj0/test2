@@ -1,0 +1,10 @@
+{
+    "columnchartdata": [
+        {"name": "Apple", "value": 20},
+        {"name": "Banana", "value": 24},
+        {"name": "Orange", "value": 12},
+        {"name": "Pears", "value": 18},
+        {"name": "Litchi", "value": 8},
+        {"name": "Peach", "value": 12},
+        {"name": "Tomato", "value": 17}]
+}

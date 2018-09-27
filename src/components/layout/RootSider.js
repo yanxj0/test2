@@ -30,7 +30,9 @@ const RootSider = ({match}) => (
                   {
                     item.children && item.children.map((subItem)=>(
                       <Menu.Item key={subItem.key}>
+                      <Link to={subItem.link}>
                         {subItem.title}
+                      </Link>
                       </Menu.Item>))
                   }
                 </SubMenu>)
