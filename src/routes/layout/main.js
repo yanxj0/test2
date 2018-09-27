@@ -1,6 +1,6 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import { Route, Switch } from 'react-router-dom';
+import { Switch, Route } from 'dva/router'
 import RootSider from '../../components/layout/RootSider';
 import RootBreadcrumb from '../../components/layout/RootBreadcrumb';
 
@@ -19,7 +19,7 @@ export const ContentRoute = (props) => {
         <Route exact path='/' component={getComponent(()=>import('../home'))}/>
         {
             list.map((item)=>(
-                <Route key={item.path} path={`${props.match.url}${item.path}`} component={getComponent(item.loader)}/>
+                <Route key={item.path} path={`${item.path}`} component={getComponent(item.loader)}/>
             ))
         }
     </Switch>)

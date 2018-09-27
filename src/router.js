@@ -1,6 +1,6 @@
 import React from 'react';
 import ProTypes from 'prop-types';
-import { Switch, Route, routerRedux } from 'dva/router'
+import { routerRedux } from 'dva/router'
 import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
@@ -12,9 +12,7 @@ export default function Routers({ history }) {
     return (
         <LocaleProvider locale={zhCN}>
             <ConnectedRouter history={history}>
-                <Switch>
-                    <Route exact path={'/'} render={props => <Home {...props}/>}/>
-                </Switch>
+                <Home {...history}/>   
             </ConnectedRouter>
         </LocaleProvider>
     )
