@@ -1,7 +1,8 @@
 import React from 'react';
+import './style.css';
 
 const columnchart = (props) => (
-    <div className="columnchart">
+    <div className="d3-columnchart">
         <svg id="d3-column-chart-svg"></svg>
     </div>
   );

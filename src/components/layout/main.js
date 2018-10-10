@@ -18,7 +18,7 @@ class Home extends Component {
           </Sider>
           <Layout className="content-max">
             <RootBreadcrumbRoute/>
-            <Content style={{ background: '#fff', padding: 12, margin: 0, minHeight: 280 }}>
+            <Content style={{ background: '#fff', padding: 12, margin: 0, minHeight: 280, position: 'relative'}}>
               <ContentRoute {...this.props}/>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
